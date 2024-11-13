@@ -1,0 +1,148 @@
+.kanban-board {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 300px;
+  gap: 24px;
+  padding: 24px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  width: 100%;
+  align-items: start;
+  color: black;
+
+  height: 100%;
+}
+
+.kanban-board::-webkit-scrollbar {
+  height: 8px;
+}
+
+.kanban-board::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.kanban-board::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.column {
+  background: #f4f5f8;
+  border-radius: 8px;
+  height: fit-content;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.column-header {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.column-header h2 {
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.count {
+  color: #6b7280;
+  font-size: 14px;
+  padding: 2px 6px;
+  background: #f4f5f8;
+  border-radius: 12px;
+  min-width: 24px;
+  text-align: center;
+}
+
+.cards {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.cards::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cards::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cards::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+.user-avatar {
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.priority-icon-dash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 1200px) {
+  .kanban-board {
+    grid-auto-columns: 400px;
+
+    height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .kanban-board {
+    padding: 16px;
+    gap: 16px;
+    height: 100%;
+
+    grid-auto-columns: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kanban-board {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 12px;
+    height: auto;
+    min-height: calc(100vh - 52px);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .column {
+    max-height: none;
+  }
+
+  .column-header {
+    padding: 12px;
+  }
+
+  .cards {
+    padding: 6px;
+    max-height: none;
+  }
+}

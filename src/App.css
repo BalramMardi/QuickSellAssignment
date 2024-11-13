@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  background-color: #f4f5f8;
+  min-height: 100vh;
+  font-family: Inter, system-ui, sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
